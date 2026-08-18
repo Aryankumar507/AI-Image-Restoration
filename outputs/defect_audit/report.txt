@@ -1,0 +1,22 @@
+Defect preservation & hallucination audit
+==============================================
+images per condition : 60
+GT families audited  : texture, dendrite
+
+DEFECT CONTRAST RECOVERY  (1.0 = faithful, 0.0 = defect erased)
+  mean               : 0.295
+  median             : 0.208
+  10th percentile    : -0.023
+  fraction < 0.5     : 65.0%   <- substantially lost
+  fraction < 0.2     : 48.3%   <- effectively erased
+
+  by defect type:
+    break     n= 16  mean  0.116   <0.5 68.8%
+    particle  n= 19  mean  0.601   <0.5 15.8%
+    void      n= 25  mean  0.177   <0.5 100.0%
+
+FALSE STRUCTURE on defect-free images  (0.0 = invents nothing)
+  mean               : 0.069
+  90th percentile    : 0.113
+
+panels written to    : outputs\defect_audit

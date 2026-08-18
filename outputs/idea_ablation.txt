@@ -1,0 +1,9 @@
+Idea ablation (n=60, 5 GT families + defects)
+
+variant                       PSNR      SSIM     LPIPS     params
+baseline (A+B data)         21.99dB    0.7240    0.2619     1.160M
++ E  Fourier loss           22.33dB    0.7423    0.2418     1.160M
++ B  log-speckle            22.40dB    0.7414    0.2431     1.163M
++ A  FiLM degrad.           22.24dB    0.7388    0.2548     1.207M
++ A+B+E combined            22.18dB    0.7365    0.2514     1.211M
++ A+B+E + x8 TTA            22.45dB    0.7414    0.2566     1.211M

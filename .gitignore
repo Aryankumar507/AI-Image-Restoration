@@ -1,0 +1,50 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Synthetic dataset -- regenerate with scripts/generate_data.py
+data/
+runs/
+*.npy
+
+# Generated outputs are NOT tracked -- every one is reproducible with
+#   python evaluate_submission.py --input_dir <dir> --output_dir outputs/restored
+# The only exception is a handful of before/after comparison panels, kept as
+# visual evidence for reviewers who are reading rather than running the code.
+outputs/*
+!outputs/comparisons/
+outputs/comparisons/*
+!outputs/comparisons/00000_texture.png
+!outputs/comparisons/00002_dendrite.png
+!outputs/comparisons/00004_dendrite.png
+!outputs/comparisons/00006_texture.png
+
+# Measured RESULTS (a few KB of text) are kept -- they are the evidence behind
+# the claims in docs/ASSESSMENT.md and the deck, and are expensive to
+# regenerate (each needs a full retrain of several model variants).
+!outputs/idea_ablation.txt
+!outputs/defect_audit/
+outputs/defect_audit/*
+!outputs/defect_audit/report.txt
+!outputs/defect_audit/poc_comparison.txt
+# Only the submission checkpoint is tracked; experiment variants are not.
+checkpoints/*
+!checkpoints/nafnet_lite.pt
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Experiment artifacts (PoC variants, audit scratch) -- not submission content
+data_poc/

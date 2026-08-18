@@ -1,0 +1,25 @@
+# KLA / i4C PS01 -- AI-Based Restoration of Degraded Images
+#
+# Direct dependencies only. Install with:
+#     pip install -r requirements.txt
+#     pip install -e .
+#
+# Versions below are those verified working in the reference environment
+# (Python 3.13, Windows 11). Lower bounds are given rather than exact pins so
+# the benchmark machine can resolve a CUDA build appropriate to its driver;
+# see README.md for the exact reference versions.
+
+# --- core ---
+torch>=2.6
+torchvision>=0.21
+
+# --- image I/O and array handling ---
+numpy>=1.24
+opencv-python>=4.8
+
+# --- evaluation metrics ---
+scikit-image>=0.22          # SSIM / PSNR
+lpips>=0.1.4                # LPIPS (downloads an AlexNet backbone on first use)
+
+# --- testing (optional; also available via `pip install -e ".[dev]"`) ---
+pytest>=7.4
